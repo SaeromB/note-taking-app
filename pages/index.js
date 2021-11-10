@@ -1,7 +1,14 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import styles from '../styles/Home.module.css';
+import Head from 'next/head'
+import Image from 'next/image'
+import styles from '../styles/Home.module.css'
+import Button from '../src/components/button'
+import Card from '../src/components/card'
 
 export default function Home() {
-  return <div className="text-red-500">안녕하세요</div>;
+  return (
+    <div>
+      <Button />
+      <Card />
+    </div>
+  )
 }
