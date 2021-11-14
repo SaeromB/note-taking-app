@@ -16,14 +16,7 @@ module.exports = {
       gray: colors.coolGray,
       white: '#ffffff',
     },
-    spacing: {
-      sm: '9px',
-      md: '16px',
-    },
   },
-  variants: {
-    // extend: { backgroundColor: ['active'], padding: ['hover', 'focus'] },
-    extend: { padding: ['hover', 'focus'] },
-  },
+  variants: {},
   plugins: [],
 }
