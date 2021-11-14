@@ -1,15 +1,29 @@
+const colors = require('tailwindcss/colors')
 module.exports = {
   purge: ['./pages/**/*.tsx', './src/components/**/*.tsx'],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      dropShadow: {
-        '3xl': '0px 1px 2px rgba(0, 0, 0, 0.05)',
-      },
+      dropShadow: {},
+    },
+    // backgroundColor: (theme) => ({
+    //   ...theme('colors'),
+    //   secondary: '#4B5563',
+    // }),
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      gray: colors.coolGray,
+      white: '#ffffff',
+    },
+    spacing: {
+      sm: '9px',
+      md: '16px',
     },
   },
   variants: {
-    extend: {},
+    // extend: { backgroundColor: ['active'], padding: ['hover', 'focus'] },
+    extend: { padding: ['hover', 'focus'] },
   },
   plugins: [],
 }
