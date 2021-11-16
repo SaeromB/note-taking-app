@@ -6,10 +6,6 @@ module.exports = {
     extend: {
       dropShadow: {},
     },
-    // backgroundColor: (theme) => ({
-    //   ...theme('colors'),
-    //   secondary: '#4B5563',
-    // }),
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
