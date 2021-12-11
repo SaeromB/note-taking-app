@@ -10,6 +10,7 @@ import React, { useState } from 'react'
 
 const Home = () => {
   const [show, setShow] = useState(false)
+  const [manage, setManage] = useState(false)
 
   return (
     <>
@@ -23,7 +24,8 @@ const Home = () => {
           {/* <button onClick={() => setShow(true)}>Create</button>
           <CreateNoteModal>Hello</CreateNoteModal> */}
         </div>
-        <ManageNote />
+        <button onClick={() => setManage(true)}>Manage</button>
+        <ManageNote manage={manage} setManage={setManage} />
         <div className="grid grid-cols-2 mt-4 gap-4 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6">
           <Card />
           <Card />
