@@ -18,14 +18,9 @@ const Home = () => {
         <div className="flex justify-between">
           <h1 className="font-semibold	leading-7	text-xl">Note Taking</h1>
           <button onClick={() => setShow(true)}>Create</button>
-          {/* <CreateNoteModal show={show} setShow={setShow}>
-            This is inside the modal!
-          </CreateNoteModal> */}
-          {/* <button onClick={() => setShow(true)}>Create</button>
-          <CreateNoteModal>Hello</CreateNoteModal> */}
         </div>
-        <button onClick={() => setManage(true)}>Manage</button>
-        <ManageNote manage={manage} setManage={setManage} />
+        {/* <button onClick={() => setManage(true)}>Manage</button>
+        <ManageNote manage={manage} setManage={setManage} /> */}
         <div className="grid grid-cols-2 mt-4 gap-4 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6">
           <Card />
           <Card />
