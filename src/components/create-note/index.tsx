@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import Button from '../button'
 
 type CreateModalProps = {
   closeable?: boolean
@@ -31,7 +32,13 @@ const CreateNoteModal: FC<CreateModalProps> = ({ children, show, setShow }) => {
                 <label className="">Content</label>
               </div>
               <div className="mt-1">
-                <input className="w-full border border-gray-300 rounded-md"></input>
+                <textarea className="w-full border border-gray-300 rounded-md"></textarea>
+              </div>
+
+              <div>
+                <Button>Cancel</Button>
+                <button>Cancel</button>
+                <button>Create</button>
               </div>
             </form>
           </div>
