@@ -1,12 +1,12 @@
-import React from 'react'
+// import React from 'react'
 
-import { Meta } from '@storybook/react'
+// import { Meta } from '@storybook/react'
 
-import Button from './index'
+// import PrimaryButton from './index'
 
-export default {
-  component: Button,
-  title: 'Components/Button',
-} as Meta
+// export default {
+//   component: PrimaryButton,
+//   title: 'Components/',
+// } as Meta
 
-export const Secondary: React.VFC<{}> = () => <Button />
+// export const Secondary: React.VFC<{}> = () => <PrimaryButton />

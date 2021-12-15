@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
-import Button from '../button'
+import { PrimaryButton } from '../button'
+import { Primary } from '../card/index.stories'
 
 type CreateModalProps = {
   closeable?: boolean
@@ -36,9 +37,8 @@ const CreateNoteModal: FC<CreateModalProps> = ({ children, show, setShow }) => {
               </div>
 
               <div>
-                <Button>Cancel</Button>
-                <button>Cancel</button>
-                <button>Create</button>
+                <PrimaryButton>Cancel</PrimaryButton>
+                <PrimaryButton>Create</PrimaryButton>
               </div>
             </form>
           </div>

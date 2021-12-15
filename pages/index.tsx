@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Button from '../src/components/button'
+import { PrimaryButton } from '../src/components/button'
 import Card from '../src/components/card'
 import CreateNoteModal from '../src/components/create-note'
 import ManageNote from '../src/components/manage-note'
