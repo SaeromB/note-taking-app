@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import { PrimaryButton, SecondayButton } from '../button'
 
 type ManageModalProps = {
   closeable?: boolean
@@ -9,14 +10,38 @@ type ManageModalProps = {
 const ManageNote: FC<ManageModalProps> = ({ children, manage, setManage }) => {
   return (
     manage && (
-      <div>
-        <button>Simple Modal</button>
+      <div className="fixed z-10 inset-0 overflow-y-auto">
+        <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center bg-gray-500 bg-opacity-75 ">
+          {/* Modal Content*/}
+          <div className="block w-full align-bottom bg-white p-6 rounded-md">
+            {/* Modal Head */}
+            <form>
+              <div className="flex items-center justify-between">
+                <h3 className="text-lg">Create Note</h3>
+                <button onClick={() => setManage(false)}>X</button>
+              </div>
 
-        <div className="hidden overflow-x-hidden overflow-y-auto fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center">
-          <div className="relative w-full max-w-2xl px-4 h-full md:h-auto">
-            <div className="bg-white rounded-lg shadow relative dark:bg-gray-700">
-              <h3>Hello</h3>
-            </div>
+              <div className="mt-6 text-left">
+                <label className="">Title</label>
+              </div>
+              <div className="mt-1">
+                <input className="w-full border border-gray-300 rounded-md"></input>
+              </div>
+
+              <div className="mt-6 text-left">
+                <label className="">Content</label>
+              </div>
+              <div className="mt-1">
+                <textarea className="w-full border border-gray-300 rounded-md"></textarea>
+              </div>
+
+              <div className="flex justify-end">
+                <SecondayButton>Cancel</SecondayButton>
+                <div className="ml-3">
+                  <PrimaryButton>Save</PrimaryButton>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>

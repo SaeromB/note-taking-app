@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { PrimaryButton } from '../button'
+import { SecondayButton, PrimaryButton } from '../button'
 import { Primary } from '../card/index.stories'
 
 type CreateModalProps = {
@@ -36,9 +36,11 @@ const CreateNoteModal: FC<CreateModalProps> = ({ children, show, setShow }) => {
                 <textarea className="w-full border border-gray-300 rounded-md"></textarea>
               </div>
 
-              <div>
-                <PrimaryButton>Cancel</PrimaryButton>
-                <PrimaryButton>Create</PrimaryButton>
+              <div className="flex justify-end">
+                <SecondayButton>Cancel</SecondayButton>
+                <div className="ml-3">
+                  <PrimaryButton>Create</PrimaryButton>
+                </div>
               </div>
             </form>
           </div>
