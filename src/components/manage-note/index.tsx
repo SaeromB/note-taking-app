@@ -1,4 +1,6 @@
 import React, { FC } from 'react'
+import Ellipsis from '../../../public/images/ ellipsis'
+import Close from '../../../public/images/close'
 import { PrimaryButton, SecondayButton } from '../button'
 
 type ManageModalProps = {
@@ -16,9 +18,13 @@ const ManageNote: FC<ManageModalProps> = ({ children, manage, setManage }) => {
           <div className="block w-full align-bottom bg-white p-6 rounded-md">
             {/* Modal Head */}
             <form>
-              <div className="flex items-center justify-between">
-                <h3 className="text-lg">Create Note</h3>
-                <button onClick={() => setManage(false)}>X</button>
+              <div className="flex items-center justify-end">
+                <button>
+                  <Ellipsis />
+                </button>
+                <button onClick={() => setManage(false)}>
+                  <Close />
+                </button>
               </div>
 
               <div className="mt-6 text-left">
