@@ -6,9 +6,11 @@ type CreateModalProps = {
   closeable?: boolean
   show?: any
   setShow?: any
+  note: Note
+  closeNote: CloseNote
 }
 
-const CreateNoteModal: FC<CreateModalProps> = ({ children, show, setShow }) => {
+const CreateNoteModal: FC<CreateModalProps> = ({ children, show, setShow, note, closeNote }) => {
   return (
     show && (
       <div className="fixed z-10 inset-0 overflow-y-auto">
@@ -26,7 +28,7 @@ const CreateNoteModal: FC<CreateModalProps> = ({ children, show, setShow }) => {
                 <label className="">Title</label>
               </div>
               <div className="mt-1">
-                <input className="w-full border border-gray-300 rounded-md"></input>
+                <input type="text" className="w-full border border-gray-300 rounded-md"></input>
               </div>
 
               <div className="mt-6 text-left">

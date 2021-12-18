@@ -22,9 +22,11 @@ const ManageNote: FC<ManageModalProps> = ({ children, manage, setManage }) => {
                 <button>
                   <Ellipsis />
                 </button>
-                <button onClick={() => setManage(false)}>
-                  <Close />
-                </button>
+                <div className="ml-3">
+                  <button onClick={() => setManage(false)}>
+                    <Close />
+                  </button>
+                </div>
               </div>
 
               <div className="mt-6 text-left">
