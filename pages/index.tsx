@@ -9,7 +9,7 @@ import ManageNote from '../src/components/manage-note'
 import React, { useState } from 'react'
 import CardItem from '../src/components/card-item'
 
-const notes: Note[] = [
+const initialNotes: Note[] = [
   {
     title: 'Walk the dog',
     content: 'Walk the dog',
@@ -23,6 +23,7 @@ const notes: Note[] = [
 ]
 
 const Home = () => {
+  const [notes, setNotes] = useState(initialNotes)
   return (
     <>
       <div className="p-4">
@@ -39,13 +40,7 @@ const Home = () => {
         </div>
         {/* <CreateNoteModal show={show} setShow={setShow}></CreateNoteModal> */}
       </div>
-
-      {/* <AddTodoForm /> */}
     </>
-    // <ul>
-    //   <TodoList todos={todos} toggleTodo={toggleTodo} />
-    //   <AddTodoForm addTodo={addTodo} />
-    // </ul>
   )
 }
 

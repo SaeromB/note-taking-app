@@ -40,13 +40,10 @@ const Card: FC<Props> = ({ notes }) => {
               <p className="text-gray-500 leading-5 text-sm text-left m-0 line-clamp-5"></p>
             </div>
           </div> */}
-          {notes.map((note) => (
-            <CardItem key={note.title} note={note} />
-          ))}
         </button>
       </div>
 
-      <ManageNote manage={manage} setManage={setManage} />
+      {/* <ManageNote manage={manage} setManage={setManage} /> */}
     </>
   )
 }
