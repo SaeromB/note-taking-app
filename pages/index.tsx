@@ -15,16 +15,21 @@ const initialNotes: Note[] = [
     title: 'Walk the dog',
     content: 'Walk the dog',
     complete: false,
+    archived: false,
   },
   {
     title: 'Write app',
     content: 'Write app',
     complete: true,
+    archived: true,
   },
 ]
 
 const Home = () => {
   const [notes, setNotes] = useState(initialNotes)
+  const [show, setShow] = useState(false)
+
+  const [selectedFilter, setSelectedFilter] = useState('notes') //notes, archived
 
   const toggleNote = (selectedNote: Note) => {
     const newNotes = notes.map((note) => {
@@ -39,29 +44,48 @@ const Home = () => {
     setNotes(newNotes)
   }
 
-  const addNote: AddNoteTitle = (title: string, content: string) => {
+  const addNote: AddNote = (title: string, content: string) => {
     const newNote = { title, content, complete: false }
     setNotes([...notes, newNote])
   }
+
+  const filteredNotes = notes.filter((note) => {
+    if (selectedFilter === 'notes') {
+      if (note.archived === false) {
+        return true
+      } else {
+        return false
+      }
+    } else {
+      if (note.archived === true) {
+        return true
+      } else {
+        return false
+      }
+    }
+  })
 
   return (
     <>
       <div className="p-4">
         <div className="flex justify-between">
           <h1 className="font-semibold	leading-7	text-xl">Note Taking</h1>
-          {/* <button onClick={() => setShow(true)}>Create</button> */}
+          <button onClick={() => setShow(true)}>Create</button>
         </div>
+        <button onClick={() => setSelectedFilter('notes')}>Notes</button>
+        <button onClick={() => setSelectedFilter('archived')}>Archived</button>
         {/* <button onClick={() => setManage(true)}>Manage</button>
         <ManageNote manage={manage} setManage={setManage} /> */}
         <div className="grid grid-cols-2 mt-4 gap-4 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6">
           {/* <Card /> */}
           {/* <CardItem note={notes[0]} />
           <CardItem note={notes[1]} /> */}
-          <CardList notes={notes} toggleNote={toggleNote} />
+          <CardList notes={filteredNotes} toggleNote={toggleNote} />
         </div>
-        {/* <CreateNoteModal show={show} setShow={setShow}></CreateNoteModal> */}
-        <CreateNoteModal
-          addNoteTitle={addNote}
+        {/* <CreateNoteModal
+          show={show}
+          setShow={setShow}
+          addNote={addNote}
           note={{
             title: '',
             content: '',
@@ -70,7 +94,25 @@ const Home = () => {
           closeNote={function (selectedNote: Note): void {
             throw new Error('Function not implemented.')
           }}
-          addNoteContent={function (content: string): void {}}
+          onClick={function (): void {
+            throw new Error('Function not implemented.')
+          }}
+        /> */}
+        <CreateNoteModal
+          addNote={addNote}
+          show={show}
+          setShow={setShow}
+          note={{
+            title: '',
+            content: '',
+            complete: false,
+          }}
+          closeNote={function (selectedNote: Note): void {
+            throw new Error('Function not implemented.')
+          }}
+          onClick={function (): void {
+            throw new Error('Function not implemented.')
+          }}
         />
       </div>
     </>

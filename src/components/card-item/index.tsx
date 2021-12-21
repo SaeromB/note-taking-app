@@ -17,6 +17,7 @@ const CardItem: FC<Props> = ({ note, toggleNote }) => {
               <input
                 type="checkbox"
                 checked={note.complete}
+                readOnly
                 onClick={() => {
                   toggleNote(note)
                 }}
