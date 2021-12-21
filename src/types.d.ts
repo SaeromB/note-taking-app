@@ -4,6 +4,7 @@ type Note = {
   complete: boolean
 }
 
-type ToggleTodo = (selectedTodo: Todo) => void
-type AddTodo = (text: string) => void
+type AddNoteTitle = (title: string, content: string) => void
+type AddNoteContent = (content: string) => void
 type CloseNote = (selectedNote: Note) => void
+type ToggleNote = (selectedNote: Note) => void

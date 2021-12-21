@@ -8,6 +8,7 @@ import ManageNote from '../src/components/manage-note'
 
 import React, { useState } from 'react'
 import CardItem from '../src/components/card-item'
+import CardList from '../src/components/card-list'
 
 const initialNotes: Note[] = [
   {
@@ -24,6 +25,25 @@ const initialNotes: Note[] = [
 
 const Home = () => {
   const [notes, setNotes] = useState(initialNotes)
+
+  const toggleNote = (selectedNote: Note) => {
+    const newNotes = notes.map((note) => {
+      if (note === selectedNote) {
+        return {
+          ...note,
+          complete: !note.complete,
+        }
+      }
+      return note
+    })
+    setNotes(newNotes)
+  }
+
+  const addNote: AddNoteTitle = (title: string, content: string) => {
+    const newNote = { title, content, complete: false }
+    setNotes([...notes, newNote])
+  }
+
   return (
     <>
       <div className="p-4">
@@ -35,10 +55,23 @@ const Home = () => {
         <ManageNote manage={manage} setManage={setManage} /> */}
         <div className="grid grid-cols-2 mt-4 gap-4 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6">
           {/* <Card /> */}
-          <CardItem note={notes[0]} />
-          <CardItem note={notes[1]} />
+          {/* <CardItem note={notes[0]} />
+          <CardItem note={notes[1]} /> */}
+          <CardList notes={notes} toggleNote={toggleNote} />
         </div>
         {/* <CreateNoteModal show={show} setShow={setShow}></CreateNoteModal> */}
+        <CreateNoteModal
+          addNoteTitle={addNote}
+          note={{
+            title: '',
+            content: '',
+            complete: false,
+          }}
+          closeNote={function (selectedNote: Note): void {
+            throw new Error('Function not implemented.')
+          }}
+          addNoteContent={function (content: string): void {}}
+        />
       </div>
     </>
   )
