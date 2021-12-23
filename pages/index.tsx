@@ -29,7 +29,7 @@ const Home = () => {
   const [notes, setNotes] = useState(initialNotes)
   const [show, setShow] = useState(false)
 
-  const [selectedFilter, setSelectedFilter] = useState('notes') //notes, archived
+  const [selectedFilter, setSelectedFilter] = useState('notes')
 
   const toggleNote = (selectedNote: Note) => {
     const newNotes = notes.map((note) => {
@@ -45,7 +45,7 @@ const Home = () => {
   }
 
   const addNote: AddNote = (title: string, content: string) => {
-    const newNote = { title, content, complete: false }
+    const newNote = { title, content, complete: false, archived: false }
     setNotes([...notes, newNote])
   }
 
@@ -77,27 +77,9 @@ const Home = () => {
         {/* <button onClick={() => setManage(true)}>Manage</button>
         <ManageNote manage={manage} setManage={setManage} /> */}
         <div className="grid grid-cols-2 mt-4 gap-4 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6">
-          {/* <Card /> */}
-          {/* <CardItem note={notes[0]} />
-          <CardItem note={notes[1]} /> */}
           <CardList notes={filteredNotes} toggleNote={toggleNote} />
         </div>
-        {/* <CreateNoteModal
-          show={show}
-          setShow={setShow}
-          addNote={addNote}
-          note={{
-            title: '',
-            content: '',
-            complete: false,
-          }}
-          closeNote={function (selectedNote: Note): void {
-            throw new Error('Function not implemented.')
-          }}
-          onClick={function (): void {
-            throw new Error('Function not implemented.')
-          }}
-        /> */}
+
         <CreateNoteModal
           addNote={addNote}
           show={show}
@@ -106,6 +88,7 @@ const Home = () => {
             title: '',
             content: '',
             complete: false,
+            archived: false,
           }}
           closeNote={function (selectedNote: Note): void {
             throw new Error('Function not implemented.')
