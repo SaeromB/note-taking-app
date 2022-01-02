@@ -1,9 +1,23 @@
 import React, { FC } from 'react'
 
+type ButtonProps = {
+  variant?: 'primary' | 'secondary' | 'archived' | 'card'
+}
+
 type Props = {
   children: any
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
+
+// const Button: FC<ButtonProps> = ({ variant = 'card', ...rest }) => {
+//   if (variant === 'card') {
+//     return <button>Card Button</button>
+//   }
+
+//   if (variant === 'archived') {
+//     return <button>Archived Button</button>
+//   }
+// }
 
 const PrimaryButton: FC<Props> = ({ children, onClick }) => {
   return (
@@ -24,4 +38,9 @@ const SecondayButton: FC = ({ children }) => {
     </button>
   )
 }
-export { PrimaryButton, SecondayButton }
+
+const CardButton = () => {
+  return <div></div>
+}
+
+export { PrimaryButton, SecondayButton, CardButton }

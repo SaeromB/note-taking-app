@@ -1,5 +1,6 @@
 import { notDeepStrictEqual, notEqual, notStrictEqual } from 'assert'
 import React, { FC, useState } from 'react'
+import Close from '../../../public/images/close'
 import { SecondayButton, PrimaryButton } from '../button'
 import { Primary } from '../card/index.stories'
 
@@ -28,7 +29,9 @@ const CreateNoteModal: FC<Props> = ({ addNote, show, setShow }) => {
             <form>
               <div className="flex items-center justify-between">
                 <h3 className="text-lg">Create Note</h3>
-                <button onClick={() => setShow(false)}>X</button>
+                <button onClick={() => setShow(false)}>
+                  <Close />
+                </button>
               </div>
               <div className="mt-6 text-left">
                 <label className="">Title</label>
@@ -50,6 +53,7 @@ const CreateNoteModal: FC<Props> = ({ addNote, show, setShow }) => {
               <div className="mt-1">
                 <textarea
                   className="w-full border border-gray-300 rounded-md"
+                  rows={5}
                   value={content}
                   onChange={(e) => {
                     setContent(e.target.value)
@@ -57,6 +61,9 @@ const CreateNoteModal: FC<Props> = ({ addNote, show, setShow }) => {
                 />
               </div>
               <div className="flex justify-end">
+                <div className="mr-3">
+                  <SecondayButton>Cancel</SecondayButton>
+                </div>
                 <PrimaryButton
                   onClick={(e) => {
                     e.preventDefault()

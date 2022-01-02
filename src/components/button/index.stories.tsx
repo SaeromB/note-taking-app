@@ -1,12 +1,16 @@
-// import React from 'react'
-
-// import { Meta } from '@storybook/react'
-
-// import PrimaryButton from './index'
+import { PrimaryButton } from './index'
 
 // export default {
-//   component: PrimaryButton,
-//   title: 'Components/',
-// } as Meta
+//   title: 'component/Button',
+//   component: null,
+// }
 
-// export const Secondary: React.VFC<{}> = () => <PrimaryButton />
+// const Template = (args) => {
+//   ;<ThemeProvider theme={theme}>
+//     <Button variant="card">Card Button</Button>
+//     <Button variant="archived">Archived Button</Button>
+//   </ThemeProvider>
+// }
+
+// export const Default = Template.bind({})
+// Default.argTypes = {}

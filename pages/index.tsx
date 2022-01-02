@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import { PrimaryButton } from '../src/components/button'
+import { PrimaryButton, SecondayButton } from '../src/components/button'
 import Card from '../src/components/card'
 import CreateNoteModal from '../src/components/create-note'
 import ManageNote from '../src/components/manage-note'
@@ -70,7 +70,7 @@ const Home = () => {
       <div className="p-4">
         <div className="flex justify-between">
           <h1 className="font-semibold	leading-7	text-xl">Note Taking</h1>
-          <button onClick={() => setShow(true)}>Create</button>
+          <PrimaryButton onClick={() => setShow(true)}>Create</PrimaryButton>
         </div>
         <button onClick={() => setSelectedFilter('notes')}>Notes</button>
         <button onClick={() => setSelectedFilter('archived')}>Archived</button>
