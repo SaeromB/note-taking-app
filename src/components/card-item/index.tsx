@@ -1,3 +1,4 @@
+import { title } from 'process'
 import React, { FC, useState } from 'react'
 import ManageNote from '../manage-note'
 
@@ -7,6 +8,10 @@ interface Props {
 }
 const CardItem: FC<Props> = ({ note, toggleNote }) => {
   const [modal, setModal] = useState(false)
+  const handleRemove = () => {
+    console.log(note.title)
+  }
+
   return (
     <>
       <div onClick={() => setModal(true)} className="aspect-w-1 aspect-h-1 text-left">
@@ -14,14 +19,15 @@ const CardItem: FC<Props> = ({ note, toggleNote }) => {
           <div className="mt-2 h-full text-left">
             {note.complete ? <p>Deleted</p> : null}
             <div>
-              <input
+              {/* <input
                 type="checkbox"
                 checked={note.complete}
                 readOnly
                 onClick={() => {
                   toggleNote(note)
                 }}
-              />
+              /> */}
+              <button onClick={handleRemove}>Delete</button>
               <p className="text-gray-900 leading-2 text-lg font-medium line-clamp-2 max-h-14 m-0">
                 {note.title}
               </p>

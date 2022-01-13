@@ -20,7 +20,7 @@ const ManageNote: FC<Props> = ({ note, modal, setModal }) => {
             {/* Modal Head */}
             <form>
               <div className="flex items-center justify-end">
-                <button>
+                <button onClick={() => console.log('This is working')}>
                   <Ellipsis />
                 </button>
                 <div className="ml-3">

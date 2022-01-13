@@ -30,6 +30,12 @@ const Home = () => {
   const [show, setShow] = useState(false)
 
   const [selectedFilter, setSelectedFilter] = useState('notes')
+  const [list, setList] = useState(initialNotes)
+
+  // const deleteNote = (selectedNote: Note, title: string) => {
+  //   const newNotes = notes.filter((note) => note.title !== title)
+  //   setList(newNotes)
+  // }
 
   const toggleNote = (selectedNote: Note) => {
     const newNotes = notes.map((note) => {
@@ -48,6 +54,16 @@ const Home = () => {
     const newNote = { title, content, complete: false, archived: false }
     setNotes([...notes, newNote])
   }
+
+  const deleteNote: DeleteNote = (title: string, content: string) => {
+    const newNotes = notes.filter((note) => note.title !== title)
+    setNotes(newNotes)
+  }
+
+  // const deleteNote: DeleteNote = (title: string, content: string) => {
+  //   const newNotes = notes.filter((note) => note.title !== title)
+  //   setNotes(newNotes)
+  // }
 
   const filteredNotes = notes.filter((note) => {
     if (selectedFilter === 'notes') {
@@ -77,7 +93,9 @@ const Home = () => {
         {/* <button onClick={() => setManage(true)}>Manage</button>
         <ManageNote manage={manage} setManage={setManage} /> */}
         <div className="grid grid-cols-2 mt-4 gap-4 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6">
-          <CardList notes={filteredNotes} toggleNote={toggleNote} />
+          <CardList notes={filteredNotes} toggleNote={toggleNote}>
+            <button>Delete</button>
+          </CardList>
         </div>
 
         <CreateNoteModal

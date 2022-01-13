@@ -7,16 +7,19 @@ const initialNotes: Note[] = [
     title: 'Note Title',
     content: 'Lorem ipsum dolor sit amet.',
     complete: false,
+    archived: true,
   },
   {
     title: 'Note Title',
     content: 'Lorem ipsum dolor sit amet.',
     complete: false,
+    archived: false,
   },
   {
     title: 'Note Title',
     content: 'Lorem ipsum dolor sit amet.',
     complete: true,
+    archived: false,
   },
 ]
 
