@@ -7,7 +7,7 @@ import CreateNoteModal from '../src/components/create-note'
 import ManageNote from '../src/components/manage-note'
 
 import React, { useState } from 'react'
-import CardItem from '../src/components/card-item'
+import CardItem from '../src/components/card-item/CardItem'
 import CardList from '../src/components/card-list'
 
 const initialNotes: Note[] = [
@@ -38,6 +38,7 @@ const Home = () => {
   // }
 
   const toggleNote = (selectedNote: Note) => {
+    console.log('toggleNote')
     const newNotes = notes.map((note) => {
       if (note === selectedNote) {
         return {
