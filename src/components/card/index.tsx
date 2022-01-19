@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react'
-import CardItem from '../card-item'
+import CardItem from '../card-item/CardItem'
 import ManageNote from '../manage-note'
 
 const initialNotes: Note[] = [
