@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import CardItem from '../card-item'
+import CardItem from '../card-item/CardItem'
 
 interface Props {
   notes: Note[]
